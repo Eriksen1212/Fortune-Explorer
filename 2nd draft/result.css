@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* changed from 100vh to push content a bit up */
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scroll */
+
+    background-size: cover;       /* 이미지가 화면에 맞게 조절됩니다. */
+    background-position: center;  /* 이미지가 화면 중앙에 위치하도록 합니다. */
+    background-repeat: no-repeat; /* 이미지가 반복되지 않도록 합니다. */
+}
+
+.text-box {
+    background-color: rgba(255, 255, 255, 0.7); /* 투명한 흰색 배경 */
+    padding: 10px 20px; /* 상자 안의 글자와 상자 사이에 약간의 간격을 제공 */
+    border-radius: 10px; /* 상자 모서리를 약간 둥글게 */
+    display: inline-block; /* 글자의 크기에 맞게 상자 크기 조절 */
+    margin-bottom: 20px; /* 각 상자 아래에 약간의 여백 추가 */
+}
+
+#fortuneResult {
+    opacity: 0;
+    transition: opacity 1s ease 1.5s; /* Speeding up the appearance */
+    font-size: 2.3em;
+    text-align: center;
+    margin: 20px 0;
+    color: #0d0c15b0; /* Adding a distinct color */
+}
+
+#author {
+    opacity: 0;
+    transition: opacity 1.5s ease 2s; /* Speeding up the appearance */
+    font-style: italic;
+    font-size: 1.9em;
+    text-align: center;
+    color: #1d847d; /* Making it slightly gray */
+}
+
+#animationWrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px; /* Reduced space */
+}
+
+.puzzle-piece {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: #9c1767;
+    transition: transform 1s ease; /* Speeding up the animation */
+}
+
+#top-left { transform: translate(-60%, -60%); }
+#top-right { transform: translate(60%, -60%); }
+#bottom-left { transform: translate(-60%, 60%); }
+#bottom-right { transform: translate(60%, 60%); }
+
+#fortuneFound {
+    opacity: 0;
+    font-size: 4.3em; /* Increasing the size */
+    margin: 10px 0; /* Reduced space */
+    transition: opacity 0.8s ease 1.2s; /* Speeding up the appearance */
+    color: #8c1ba0c7; /* Giving it a vibrant color */
+}
